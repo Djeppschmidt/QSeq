@@ -1,0 +1,12 @@
+Package: QSeq
+Title: Implements Quantitative Sequencing For Microbiome Data
+Version: 0.0.0.9000
+Authors@R: 
+    person("Dietrich", "Epp Schmidt", , "djeppschmidt@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-4246-4228"))
+Description: This package maintains a set of functions for implementing QSeq for microbiome analysis pipelines. It takes a phyloseq object as input and returns a phyloseq object. QSeq works by transforming the OTU table into relative abundance, then multiplying each sample by a scaling factor. This scaling factor is an independent measure of total abundance of taxa in the sample. Often this measure is determined using Quantitative PCR using the same primer sequences as was used for sequencing. This method can equally be applied to metagenomes or metagenome predictions such as is created from picrust2. It does not require any modification to do so; one simply needs the meta genome predictions as the OTU table in the phyloseq object, and the same scaling factors in the sample data slot. 
+License: `use_mit_license()`
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2.9000
+Imports: phyloseq
