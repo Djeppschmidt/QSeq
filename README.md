@@ -5,7 +5,9 @@ This package is intended to be used as part of R based microbiome analysis pipel
 Some jargon defined:
 
 OTU = Operational Taxonomic Unit. Used interchangeably with species concepts for microbiome research, typically created by clustering several sequence variants into one infered "operational taxonomic unit."
+
 ASV = Amplicon Sequence Variant. A type of OTU where error inference is used to identify unique, biologically relevant variants of the amplicon that was sequenced.
+
 QPCR = Quantitative Polymerase Chain Reaction. This is a lab method for counting the number of a particular gene in a sample.
 
 This software uses phyloseq to organize the data, and requires a phyloseq object as input. Instructions on how to create phyloseq objects from OTU tables and sample data can be found [here](https://joey711.github.io/phyloseq/install.html#problem_with_r_core_version_number). Instructions on how to process marker gene sequence data into an OTU table in R using DADA2, with a hand-off to phyloseq can be found [here](https://benjjneb.github.io/dada2/index.html). 
