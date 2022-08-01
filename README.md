@@ -61,6 +61,8 @@ Please cite this package with:
 
 [insert citation when published]
 
+# NOTES
+
 A note on rounding:
 It is possible that rounding might generate zeroes. If this happens, I suggest revisiting your quantification method. This effect indicates that your composition was either sampled from a larger population than what was sampled for quantification; or the abundance values for each sample were either transformed (for example, they are sometimes transformed to log scale), or not calculated appropriately (for example, ensure that QPCR has been calculated on an equal mass or volume bases to compare to the input for sequencing). In my work, this means ensuring that the QPCR abundance is calculated to represent the total abundance of bacteria that I expect from the mass of soil that was used for the extraction. In principle, calculating based on the total DNA input to the reaction should work as well.
 
