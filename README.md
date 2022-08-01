@@ -66,6 +66,6 @@ Please cite this package with:
 
 # Citations:
 
-1) Jian et al., 2020. DOI: []()
-2) Epp Schmidt et al., 2022. DOI: []()
+1) Jian et al., 2020. DOI: [10.1371/journal.pone.0227285](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0227285)
+2) Epp Schmidt et al., 2022. DOI: [10.1016/j.apsoil.2022.104396](https://doi.org/10.1016/j.apsoil.2022.104396)
 3) Epp Schmidt et al., (in prep) DOI: []()
