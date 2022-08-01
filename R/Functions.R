@@ -9,6 +9,8 @@
 #' QSeq()
 
 QSeq<-function(ps, abundance){
+  # check to make sure column exists for abundance data
+  if(!any(names(phyloseq::sample_data(ps))==abundance)){stop("Error: abundance column does not exist in sample data. Metadata has the following columns: " names(phyloseq::sample_data(ps)), " ; You asked for: " abundance))}
   
   ps<-physloseq::prune_samples(!is.na(sample_data(ps)[[abundance]]), ps)
   
