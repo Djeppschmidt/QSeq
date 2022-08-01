@@ -14,7 +14,7 @@ This software uses phyloseq to organize the data, and requires a phyloseq object
 
 This package requires two pieces of input data. The first is an OTU table. The second is a quantitative measure of total abundance. One option is to use QPCR to determine the total number of marker genes in a sample used for sequencing, but other methods could be used. Conceptually, this software uses sequencing to determine the composition of the sample, and an independent measure of abundance to determine total abundance for each sample. It operates by scaling the composition of each sample by the total abundance of that sample.
 
-houses one primary function that operates as follows:
+QSeq houses one primary function that operates as follows:
 
 1) OTU count data is transformed into relative abundance.
 2) The relative abundance values for each sample are multiplied by that sample's total abundance.
