@@ -21,12 +21,7 @@ QSeq houses one primary function that operates as follows:
 3) Sequence counts are rounded to the nearest whole integer to avoid partial sequence counts.
 4) The new OTU table is merged back into phyloseq, and a phyloseq object is returned with the original metadata and taxonomy, but updated abundance values for each OTU in each sample.
 
-In most cases, this QSeq operation should not change the composition of the data, and so it can be done before alpha diversity calculations. It is most useful for beta diversity and differential abundance testing, so I prefer to do alpha diversity calculations on unmodified data before QSeq transformation. 
-
-It is possible that rounding might generate zeroes. If this happens, I suggest revisiting your quantification method. This effect indicates that your composition was either sampled from a larger population than what was sampled for quantification; or the abundance values for each sample were either transformed (for example, they are sometimes transformed to log scale), or not calculated appropriately (for example, ensure that QPCR has been calculated on an equal mass or volume bases to compare to the input for sequencing). In my work, this means ensuring that the QPCR abundance is calculated to represent the total abundance of bacteria that I expect from the mass of soil that was used for the extraction. In principle, calculating based on the total DNA input to the reaction should work as well.
-
-A note on rarefaction:
-Rarefaction is sometimes used to control the sampling effort for each sample. This is most appropriate for standardizing the data before calculating alpha diversity metrics. QSeq should not materially affect alpha diversity calculations, and rather is most useful for beta diversity and differential abundance analysis. From this perspective, I do not include any subsampling routine in this package. If you want to model to account for sampling error, I recommend capturing the total number of sequences per sample prior to implementing QSeq, since QSeq will modify the OTU table and obscure this information.
+In most cases, this QSeq operation should not change the composition of the data, and so it can be done before alpha diversity calculations. It is most useful for beta diversity and differential abundance testing, so I prefer to do alpha diversity calculations on unmodified data before QSeq transformation (see notes below). 
 
 # Installation and Tutorial
 
@@ -65,6 +60,12 @@ You may now conduct the rest of your community analysis.
 Please cite this package with: 
 
 [insert citation when published]
+
+A note on rounding:
+It is possible that rounding might generate zeroes. If this happens, I suggest revisiting your quantification method. This effect indicates that your composition was either sampled from a larger population than what was sampled for quantification; or the abundance values for each sample were either transformed (for example, they are sometimes transformed to log scale), or not calculated appropriately (for example, ensure that QPCR has been calculated on an equal mass or volume bases to compare to the input for sequencing). In my work, this means ensuring that the QPCR abundance is calculated to represent the total abundance of bacteria that I expect from the mass of soil that was used for the extraction. In principle, calculating based on the total DNA input to the reaction should work as well.
+
+A note on rarefaction:
+Rarefaction is sometimes used to control the sampling effort for each sample. This is most appropriate for standardizing the data before calculating alpha diversity metrics. QSeq should not materially affect alpha diversity calculations, and rather is most useful for beta diversity and differential abundance analysis. From this perspective, I do not include any subsampling routine in this package. If you want to model to account for sampling error, I recommend capturing the total number of sequences per sample prior to implementing QSeq, since QSeq will modify the OTU table and obscure this information.
 
 # Citations:
 
