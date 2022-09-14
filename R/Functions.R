@@ -35,9 +35,9 @@ QSeq<-function(ps, abundance){
 #' @examples 
 #' QScale()
 Qscale<-function(ps, scale){
-  otu <- data.frame(as.matrix(phyloseq::otu_table(phyloseq::transform_sample_counts(ps, function(x) x/sum(x))))) # transform count data into relative abundance, output to data table
+  otu <- as.data.frame(as.matrix(phyloseq::otu_table(phyloseq::transform_sample_counts(ps, function(x) x/sum(x))))) # transform count data into relative abundance, output to data table
   if(!taxa_are_rows(ps)){
-    otu<-data.frame(t(as.matrix(phyloseq::otu_table(phyloseq::transform_sample_counts(ps, function(x) x/sum(x))))))
+    otu<-as.data.frame(t(as.matrix(phyloseq::otu_table(phyloseq::transform_sample_counts(ps, function(x) x/sum(x))))))
     } # ensure taxa are rows
   
   #scaled<-mapply(`*`, otu, scale)
@@ -46,7 +46,10 @@ Qscale<-function(ps, scale){
   #scaled<-round(scaled)
   
   otu[] <- mapply(`*`, otu, scale) # Multiply relative abundance by total abundance (gene)
+  print(rownames(otu))
   scaled<-round(otu) # round taxon abundance to nearest integer
+  
+  #print(colnames(scaled))
   p2<-ps
   phyloseq::otu_table(p2) <- phyloseq::otu_table(scaled, taxa_are_rows=T)
   
@@ -70,26 +73,36 @@ getQIIME<-function(features, metadata, ASV, taxref){
   
   # convert QIIME 2 data to phyloseq object.
   # this object does not have sequences, or taxonomy table
-  ps<-qza_to_phyloseq(features=features, metadata=metadata)
+  ps<-qiime2R::qza_to_phyloseq(features=features, metadata=metadata)
   
   # get sequences for ps object
-  tax<-read_qza(file=ASV)
+  tax<-qiime2R::read_qza(file=ASV)
   
   
   # replace taxa names with sequences
-  tnames<-taxa_names(ps)
+  tnames<-phyloseq::taxa_names(ps)
   for(i in tnames){
     tnames[tnames==i]<-as.character(tax$data[[i]])
   }
   
-  taxa_names(ps)<-tnames
+  phyloseq::taxa_names(ps)<-tnames
   
   # assign taxonomy to sequences:
-  taxa <- assignTaxonomy(tnames, taxref, multithread=TRUE) #SILVA V138 / August 15 2020
+  taxa <- phyloseq::assignTaxonomy(tnames, taxref, multithread=TRUE) #SILVA V138 / August 15 2020
   
   # add taxonomy table to phyoseq object
-  tax_table(ps)<-tax_table(taxa)
+  phyloseq::tax_table(ps)<-phyloseq::tax_table(taxa)
   
   # output complete ps object with sequences and metadata for taxonomy and sample data
   return(ps)
 }
+
+# additional functions for modelingn:
+
+# abundance-occupancy modeling (abundance vs occupancy)
+
+# correlation (covariance and co-occurance)
+
+# identification of core microbiome using quantitative methods
+
+
