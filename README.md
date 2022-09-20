@@ -39,6 +39,7 @@ install_github("djeppschmidt/QSeq")
 QSeq has one primary function that takes the following arguments:
 
 ps = a phyloseq object with an OTU table, and sample data that includes a quantitative measure of total abundance for each sample (required).
+
 abundance = name of column in the metadata that contains the abundance data (required).
 
 To run:
