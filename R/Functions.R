@@ -97,12 +97,10 @@ getQIIME<-function(features, metadata, ASV, taxref){
   return(ps)
 }
 
-# additional functions for modelingn:
 
+# Future work:
 # abundance-occupancy modeling (abundance vs occupancy)
-
 # correlation (covariance and co-occurance)
-
 # identification of core microbiome using quantitative methods
 
 
