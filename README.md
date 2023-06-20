@@ -21,7 +21,7 @@ QSeq houses one primary function that operates as follows:
 3) Sequence counts are rounded to the nearest whole integer to avoid partial sequence counts.
 4) The new OTU table is merged back into phyloseq, and a phyloseq object is returned with the original metadata and taxonomy, but updated abundance values for each OTU in each sample.
 
-QSeq is most useful for differential abundance testing, and correlation inference. It offers no benefit for alpha diversity testing; and depending on the question might enhance or detract from beta diversity analysis.
+QSeq is most useful for differential abundance testing, and correlation inference. It offers some benefit for alpha diversity testing; and depending on the question might enhance or detract from beta diversity analysis.
 
 # Installation and Tutorial
 
@@ -50,6 +50,9 @@ To run:
 
 # not run:
 
+library(phyloseq)
+library(QSeq)
+
 abundance<-"col.name"
 Q.ps<-QSeq(ps, abundance)
 
@@ -65,7 +68,7 @@ Please cite this package with:
 # NOTES
 
 A note on rounding:
-It is possible that rounding might generate zeroes in low abundance taxa. If this happens, I suggest revisiting your quantification method because it indecates a mismatch between the rank abundance curve and total abundance (more detected features than are measured in total abundance in sample). This effect indicates that your composition was either sampled from a larger population than what was sampled for quantification; or the abundance values for each sample were either transformed (for example, they are sometimes transformed to log scale), or not calculated appropriately (for example, ensure that QPCR has been calculated on an equal mass or volume bases to compare to the input for sequencing). In my work, this means ensuring that the QPCR abundance is calculated to represent the total abundance of bacteria that I expect from the mass of soil that was used for the extraction. In principle, calculating based on the total DNA input to the reaction should work as well
+It is possible that rounding might generate zeroes in low abundance taxa. If this happens, I suggest revisiting your quantification method because it indicates a mismatch between the rank abundance curve and total abundance (more detected features than are measured in total abundance in sample). This effect indicates that your composition was either sampled from a larger population than what was sampled for quantification; or the abundance values for each sample were either transformed (for example, they are sometimes transformed to log scale), or not calculated appropriately (for example, ensure that QPCR has been calculated on an equal mass or volume bases to compare to the input for sequencing). In my work, this means ensuring that the QPCR abundance is calculated to represent the total abundance of bacteria that I expect from the mass of soil that was used for the extraction. In principle, calculating based on the total DNA input to the reaction should work as well. And, it should also be noted that rounding does add a small amount of variation to the dataset.
 
 # Citations:
 
