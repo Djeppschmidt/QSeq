@@ -4,18 +4,18 @@
 \alias{QSeq}
 \title{QSeq function}
 \usage{
-QSeq(ps, gene)
+QSeq(ps, abundance)
 }
 \arguments{
 \item{ps}{= phyloseq object with community data, and sample data with at least one column for scaling}
 
-\item{gene}{= name of column in metadata to scale counts by}
+\item{abundance}{= name of column in metadata to scale counts by}
 }
 \description{
 A wrapper for QScale that takes phyloseq object as input. Metadata needs to have sample column with scaling factor
 }
 \examples{
-QSeq(ps, gene="QPCR_16S")
+QSeq(ps, abundance="QPCR_16S")
 QSeq()
 }
 \keyword{QSeq,}

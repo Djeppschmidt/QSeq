@@ -15,8 +15,7 @@ Qscale(ps, scale)
 Takes a phyloseq object, and vector for scaling samples in otu table. After scaling, rounds taxon count values to the nearest integer, then returns a phyloseq object with scaled community data.
 }
 \examples{
-QSeq(ps, gene="QPCR_16S")
-QSeq()
+QScale()
 }
 \keyword{QSeq,}
 \keyword{Quantitative}
