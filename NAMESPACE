@@ -2,3 +2,4 @@
 
 export(QSeq)
 export(Qscale)
+export(getQIIME)

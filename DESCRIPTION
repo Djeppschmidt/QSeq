@@ -8,5 +8,5 @@ Description: This package maintains a set of functions for implementing QSeq for
 License: `use_mit_license()`
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2.9000
+RoxygenNote: 7.2.3
 Imports: phyloseq
