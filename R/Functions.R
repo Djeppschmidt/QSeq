@@ -46,7 +46,7 @@ Qscale<-function(ps, scale){
   #scaled<-round(scaled)
   
   otu[] <- mapply(`*`, otu, scale) # Multiply relative abundance by total abundance (gene)
-  print(rownames(otu))
+  # print(rownames(otu))
   scaled<-round(otu) # round taxon abundance to nearest integer
   
   #print(colnames(scaled))
