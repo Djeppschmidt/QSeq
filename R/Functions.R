@@ -16,7 +16,7 @@ QSeq<-function(ps, abundance){
   
   ps<-phyloseq::prune_samples(!is.na(sample_data(ps)[[abundance]]), ps)
   
-  print(paste(sum(is.na(phyloseq::sample_data(ps)[[abundance]])), " sample(s) missing abundance abundance data. Removing ", sum(is.na(phyloseq::sample_data(ps)[[abundance]])), " samples."))
+  print(paste(sum(is.na(phyloseq::sample_data(ps)[[abundance]])), " sample(s) missing abundance data. Removing ", sum(is.na(phyloseq::sample_data(ps)[[abundance]])), " samples."))
   # test to see if works []
   
   scale<-as.numeric(as.character(phyloseq::sample_data(ps)[[abundance]])) # make sure scaling data is not a factor
