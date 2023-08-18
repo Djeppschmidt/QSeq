@@ -61,9 +61,9 @@ Q.ps<-QSeq(ps, abundance="col.name")
 ```
 You may now conduct the rest of your community analysis.
 
-Please cite this package with: 
+Please cite this work with: 
 
-[insert citation when published]
+Epp Schmidt, DS, et al. (2023). QUANTITATIVE AMPLICON SEQUENCING IS NECESSARY TO IDENTIFY DIFFERENTIAL TAXA AND CORRELATED TAXA WHERE POPULATIONS SIZES DIFFER. Microbial Ecology. DOI: 10.1007/s00248-023-02273-z![image](https://github.com/Djeppschmidt/QSeq/assets/19291020/684950a1-346f-4ab7-b8e2-208bdd8481e8)
 
 # NOTES
 
@@ -74,4 +74,4 @@ It is possible that rounding might generate zeroes in low abundance taxa. If thi
 
 1) Jian et al., 2020. DOI: [10.1371/journal.pone.0227285](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0227285)
 2) Epp Schmidt et al., 2022. DOI: [10.1016/j.apsoil.2022.104396](https://doi.org/10.1016/j.apsoil.2022.104396)
-3) Epp Schmidt et al., (in prep) DOI: []()
+3) Epp Schmidt et al., (in prep) DOI: [10.1007/s00248-023-02273-z](https://link.springer.com/article/10.1007/s00248-023-02273-z)
