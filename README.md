@@ -1,7 +1,7 @@
 
-![image](QSeq.png)
+                                                                              ![image](QSeq.png)
 
-# QSeq
+# 
 
 This package is intended to be used as part of R based microbiome analysis pipelines to transform compositional microbiome data into Quantitative Sequence data as described in (1, 2). For a detailed description of the context, see (3).
 
