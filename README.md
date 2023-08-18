@@ -1,5 +1,5 @@
 
-                                                                              ![image](QSeq.png)
+                                          ![image](QSeq.png)
 
 # 
 
