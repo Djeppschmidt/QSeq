@@ -1,5 +1,5 @@
 
-![image](https://github.com/Djeppschmidt/QSeq/QSeq.png)
+![image](QSeq.png)
 
 # QSeq
 
